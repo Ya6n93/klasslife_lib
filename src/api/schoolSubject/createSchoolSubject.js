@@ -1,11 +1,11 @@
 import axios from 'axios'
-import { getAccessToken } from '../../utils/access_token'
 
-async function createSchoolSubject(data) {
+
+async function createSchoolSubject(data, token) {
   try {
     const response = await axios.post(
       `${process.env.REACT_APP_API_URL}/school_subjects` + data,
-      { headers: { Authorization: `Bearer ${getAccessToken()}` }}
+      { headers: { Authorization: `Bearer ${token}` }}
     )
     return { data: response.data, status: response.status }
   } catch (error) {

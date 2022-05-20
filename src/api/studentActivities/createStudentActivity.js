@@ -1,11 +1,11 @@
 import axios from 'axios'
-import { getAccessToken } from '../../utils/access_token'
 
-const createStudentActivity = async (data) => {
+
+const createStudentActivity = async (data, token) => {
   const { res } = await axios.post(
     `${process.env.REACT_APP_API_URL}/student_activities`,
     data,
-    { headers: { Authorization: `Bearer ${getAccessToken()}` } }
+    { headers: { Authorization: `Bearer ${token}` } }
   )
   return res
 }

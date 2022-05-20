@@ -1,11 +1,11 @@
 import axios from 'axios'
-import { getAccessToken } from '../../utils/access_token'
 
-async function getUser(id) {
+
+async function getUser(id, token) {
   try {
     const response = await axios.get(
       `${process.env.REACT_APP_API_URL}/users/` + id,
-      { headers: { Authorization: `Bearer ${getAccessToken()}` } }
+      { headers: { Authorization: `Bearer ${token}` } }
     )
     return { data: response.data, status: response.status }
   } catch (error) {

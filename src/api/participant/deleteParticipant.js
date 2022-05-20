@@ -1,11 +1,11 @@
 import axios from 'axios'
-import { getAccessToken } from '../../utils/access_token'
 
-async function deleteParticipant(id) {
+
+async function deleteParticipant(id, token) {
   try {
     const response = await axios.delete(
       `${process.env.REACT_APP_API_URL}/participants/` + id,
-      { headers: { Authorization: `Bearer ${getAccessToken()}` }}
+      { headers: { Authorization: `Bearer ${token}` }}
     )
     return { data: response.data, status: response.status }
   } catch (error) {
