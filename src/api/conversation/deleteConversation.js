@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-async function deleteConversation(id, token) {
+async function deleteConversation(token, id) {
   try {
     const response = await axios.delete(
       `${process.env.REACT_APP_API_URL}/conversations/` + id,

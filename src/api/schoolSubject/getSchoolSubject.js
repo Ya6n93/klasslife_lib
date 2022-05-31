@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-async function getSchoolSubject(id, token) {
+async function getSchoolSubject(token, id) {
   try {
     const response = await axios.get(
       `${process.env.REACT_APP_API_URL}/school_subjects/` + id,

@@ -1,6 +1,5 @@
 import axios from 'axios'
 
-
 async function getMessages(token) {
   try {
     const response = await axios.get(

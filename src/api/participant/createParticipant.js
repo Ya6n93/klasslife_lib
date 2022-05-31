@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-async function createParticipant(data, token) {
+async function createParticipant(token, data) {
   try {
     const response = await axios.post(
       `${process.env.REACT_APP_API_URL}/participants`,

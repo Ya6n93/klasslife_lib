@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-async function updateGrade(id, data, token) {
+async function updateGrade(token, id, data) {
   try {
     const response = await axios.put(
       `${process.env.REACT_APP_API_URL}/grades/` + id,

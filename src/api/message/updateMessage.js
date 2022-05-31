@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-async function updateMessage(id, data, token) {
+async function updateMessage(token, id, data) {
   try {
     const response = await axios.put(
       `${process.env.REACT_APP_API_URL}/messages/` + id,

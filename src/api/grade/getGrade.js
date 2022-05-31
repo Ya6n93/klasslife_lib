@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-async function getGrade(id, token) {
+async function getGrade(token, id) {
   try {
     const response = await axios.get(
       `${process.env.REACT_APP_API_URL}/grades/` + id,

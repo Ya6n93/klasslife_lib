@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-async function updateConversation(id, token) {
+async function updateConversation(token, id) {
   try {
     const response = await axios.put(
       `${process.env.REACT_APP_API_URL}/conversations/` + id,

@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-async function getParticipant(id, token) {
+async function getParticipant(token, id) {
   try {
     const response = await axios.get(
       `${process.env.REACT_APP_API_URL}/participants/` + id,

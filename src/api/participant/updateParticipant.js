@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-async function updateParticipant(id, data, token) {
+async function updateParticipant(token, id, data) {
   try {
     const response = await axios.put(
       `${process.env.REACT_APP_API_URL}/participants/` + id,

@@ -1,6 +1,5 @@
 import axios from 'axios'
 
-
 async function deleteUser(token) {
   try {
     const response = await axios.delete(

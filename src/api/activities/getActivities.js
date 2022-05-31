@@ -1,6 +1,5 @@
 import axios from 'axios'
 
-
 async function getActivities(token) {
   try {
     const response = await axios.get(

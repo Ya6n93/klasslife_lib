@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-const createStudentActivity = async (data, token) => {
+const createStudentActivity = async (token, data) => {
   const { res } = await axios.post(
     `${process.env.REACT_APP_API_URL}/student_activities`,
     data,

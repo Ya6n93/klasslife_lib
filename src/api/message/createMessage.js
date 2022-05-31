@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-async function createMessage(data, token) {
+async function createMessage(token, data) {
   try {
     const response = await axios.post(
       `${process.env.REACT_APP_API_URL}/messages`,

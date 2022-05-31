@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-async function createUser(email, password) {
+async function createUser(token, email, password) {
   try {
     const response = await axios.post(
       `${process.env.REACT_APP_API_URL}/users`,

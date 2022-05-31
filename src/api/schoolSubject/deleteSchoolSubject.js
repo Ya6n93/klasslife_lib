@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-async function deleteSchoolSubject(id, token) {
+async function deleteSchoolSubject(token, id) {
   try {
     const response = await axios.delete(
       `${process.env.REACT_APP_API_URL}/school_subjects/` + id,

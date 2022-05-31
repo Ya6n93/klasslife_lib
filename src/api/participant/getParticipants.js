@@ -1,6 +1,5 @@
 import axios from 'axios'
 
-
 async function getParticipants(token) {
   try {
     const response = await axios.get(

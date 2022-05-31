@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-async function updateSchoolSubject(id, data, token) {
+async function updateSchoolSubject(token, id, data) {
   try {
     const response = await axios.put(
       `${process.env.REACT_APP_API_URL}/school_subjects/` + id,

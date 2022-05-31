@@ -1,6 +1,5 @@
 import axios from 'axios'
 
-
 async function getStudents(token) {
   try {
     const response = await axios.get(

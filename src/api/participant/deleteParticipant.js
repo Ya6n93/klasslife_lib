@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-async function deleteParticipant(id, token) {
+async function deleteParticipant(token, id) {
   try {
     const response = await axios.delete(
       `${process.env.REACT_APP_API_URL}/participants/` + id,

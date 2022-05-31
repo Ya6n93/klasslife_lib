@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-async function createSchoolSubject(data, token) {
+async function createSchoolSubject(token, data) {
   try {
     const response = await axios.post(
       `${process.env.REACT_APP_API_URL}/school_subjects` + data,
