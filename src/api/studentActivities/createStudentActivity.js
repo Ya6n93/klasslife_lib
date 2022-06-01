@@ -1,12 +1,11 @@
-import axios from 'axios'
+import axios from '../../lib/axios'
 
 const createStudentActivity = async (token, data) => {
-  const { res } = await axios.post(
-    `${process.env.REACT_APP_API_URL}/student_activities`,
-    data,
-    { headers: { Authorization: `Bearer ${token}` } }
-  )
-  return res
+  const response = await axios.post('/student_activities', data, {
+    headers: { Authorization: `Bearer ${token}` }
+  })
+
+  return response
 }
 
 export { createStudentActivity }

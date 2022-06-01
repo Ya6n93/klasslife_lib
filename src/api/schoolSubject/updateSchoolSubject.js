@@ -1,15 +1,11 @@
-import axios from 'axios'
+import axios from '../../lib/axios'
 
 async function updateSchoolSubject(token, id, data) {
-  try {
-    const response = await axios.put(
-      `${process.env.REACT_APP_API_URL}/school_subjects/` + id,
-      { headers: { Authorization: `Bearer ${token}` }, data}
-    )
-    return { data: response.data, status: response.status }
-  } catch (error) {
-    return { error: error.response.data.message, status: error.response.status }
-  }
+  const response = await axios.put(`/school_subjects/${id}`, data, {
+    headers: { Authorization: `Bearer ${token}` }
+  })
+
+  return response
 }
 
 export { updateSchoolSubject }

@@ -1,15 +1,11 @@
-import axios from 'axios'
+import axios from '../../lib/axios'
 
 async function createConversation(token, data) {
-  try {
-    const response = await axios.post(
-      `${process.env.REACT_APP_API_URL}/conversations`,
-      { headers: { Authorization: `Bearer ${token}` }, data}
-    )
-    return { data: response.data, status: response.status }
-  } catch (error) {
-    return { error: error.response.data.message, status: error.response.status }
-  }
+  const response = await axios.post('/conversations', data, {
+    headers: { Authorization: `Bearer ${token}` }
+  })
+
+  return response
 }
 
 export { createConversation }

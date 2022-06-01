@@ -1,15 +1,11 @@
-import axios from 'axios'
+import axios from '../../lib/axios'
 
 async function createMessage(token, data) {
-  try {
-    const response = await axios.post(
-      `${process.env.REACT_APP_API_URL}/messages`,
-      { headers: { Authorization: `Bearer ${token}` }, data}
-    )
-    return { data: response.data, status: response.status }
-  } catch (error) {
-    return { error: error.response.data.message, status: error.response.status }
-  }
+  const response = await axios.post('/messages', data, {
+    headers: { Authorization: `Bearer ${token}` }
+  })
+
+  return response
 }
 
 export { createMessage }

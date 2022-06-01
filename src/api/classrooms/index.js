@@ -1,4 +1,4 @@
 export * from './createClassroom'
+export * from './deleteClassroom'
 export * from './getClassroom'
 export * from './getClassrooms'
-export * from './deleteClassroom'

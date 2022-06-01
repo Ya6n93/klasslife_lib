@@ -1,12 +1,15 @@
-import axios from 'axios'
+import axios from '../../lib/axios'
 
 const updateStudentActivity = async (token, studentActivityId, data) => {
-  const { res } = await axios.put(
-    `${process.env.REACT_APP_API_URL}/student_activities/${studentActivityId}`,
+  const response = await axios.put(
+    `/student_activities/${studentActivityId}`,
     data,
-    { headers: { Authorization: `Bearer ${token}` } }
+    {
+      headers: { Authorization: `Bearer ${token}` }
+    }
   )
-  return res
+
+  return response
 }
 
 export { updateStudentActivity }

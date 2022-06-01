@@ -1,15 +1,18 @@
-import axios from 'axios'
+import axios from '../../lib/axios'
 
 async function createUser(token, email, password) {
-  try {
-    const response = await axios.post(
-      `${process.env.REACT_APP_API_URL}/users`,
-      { headers: { Authorization: `Bearer ${token}` }, "email" : email, "password" : password }
-    )
-    return { data: response.data, status: response.status }
-  } catch (error) {
-    return { error: error.response.data.message, status: error.response.status }
-  }
+  const response = await axios.post(
+    '/users',
+    {
+      email,
+      password
+    },
+    {
+      headers: { Authorization: `Bearer ${token}` }
+    }
+  )
+
+  return response
 }
 
 export { createUser }

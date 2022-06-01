@@ -1,15 +1,11 @@
-import axios from 'axios'
+import axios from '../../lib/axios'
 
 async function getMessages(token) {
-  try {
-    const response = await axios.get(
-      `${process.env.REACT_APP_API_URL}/messages`,
-      { headers: { Authorization: `Bearer ${token}` }}
-    )
-    return { data: response.data, status: response.status }
-  } catch (error) {
-    return { error: error.response.data.message, status: error.response.status }
-  }
+  const response = await axios.get('/messages', {
+    headers: { Authorization: `Bearer ${token}` }
+  })
+
+  return response
 }
 
 export { getMessages }
