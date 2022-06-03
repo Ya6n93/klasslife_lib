@@ -1,7 +1,7 @@
 import axios from '../../lib/axios'
 
-const createUserRole = async (token, userRole) => {
-  const response = await axios.post('/user_roles', userRole, {
+const createUserRole = async (url, token, userRole) => {
+  const response = await axios.post(`${url}/user_roles`, userRole, {
     headers: { Authorization: `Bearer ${token}` }
   })
 

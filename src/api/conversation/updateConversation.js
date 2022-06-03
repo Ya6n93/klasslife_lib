@@ -1,7 +1,7 @@
 import axios from '../../lib/axios'
 
-async function updateConversation(token, id) {
-  const response = await axios.put(`/conversations/${id}`, {
+const updateConversation = async (url, token, id) => {
+  const response = await axios.put(`${url}/conversations/${id}`, {
     headers: { Authorization: `Bearer ${token}` }
   })
 

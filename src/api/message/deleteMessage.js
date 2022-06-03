@@ -1,7 +1,7 @@
 import axios from '../../lib/axios'
 
-async function deleteMessage(token, id) {
-  const response = await axios.delete(`/messages/${id}`, {
+const deleteMessage = async (url, token, id) => {
+  const response = await axios.delete(`${url}/messages/${id}`, {
     headers: { Authorization: `Bearer ${token}` }
   })
 

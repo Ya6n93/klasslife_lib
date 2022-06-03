@@ -1,7 +1,7 @@
 import axios from '../../lib/axios'
 
-async function updateGrade(token, id, data) {
-  const response = await axios.put(`/grades/${id}`, data, {
+const updateGrade = async (url, token, id, data) => {
+  const response = await axios.put(`${url}/grades/${id}`, data, {
     headers: { Authorization: `Bearer ${token}` }
   })
 

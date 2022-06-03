@@ -1,7 +1,7 @@
 import axios from '../../lib/axios'
 
-async function getStudentActivities(token) {
-  const response = await axios.get('/student_activities', {
+const getStudentActivities = async (url, token) => {
+  const response = await axios.get(`${url}/student_activities`, {
     headers: { Authorization: `Bearer ${token}` }
   })
 

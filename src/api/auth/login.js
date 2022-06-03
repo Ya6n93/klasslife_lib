@@ -1,17 +1,11 @@
 import axios from 'axios'
-import { setAccessToken } from '../../utils/access_token'
 
-async function Login(data) {
+const Login = async (url, data) => {
   try {
-    console.log(data)
-    const response = await axios.post(
-      `${process.env.REACT_APP_API_URL}/login`,
-      data
-    )
-    setAccessToken(response.data.token)
+    const response = axios.post(`${url}/login`, data)
     return response.data
   } catch (error) {
-    return { error: error.response.data.message }
+    return { error: error.response.data.message, status: error.response.status }
   }
 }
 

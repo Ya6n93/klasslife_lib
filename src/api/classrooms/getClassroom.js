@@ -1,7 +1,7 @@
 import axios from '../../lib/axios'
 
-const getClassroom = async (token, classroomId) => {
-  const response = await axios.get(`/classrooms/${classroomId}`, {
+const getClassroom = async (url, token, classroomId) => {
+  const response = await axios.get(`${url}/classrooms/${classroomId}`, {
     headers: { Authorization: `Bearer ${token}` }
   })
 

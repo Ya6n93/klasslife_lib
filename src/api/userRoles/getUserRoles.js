@@ -1,7 +1,7 @@
 import axios from '../../lib/axios'
 
-const getUserRoles = async (token) => {
-  const response = await axios.get('/user_roles', {
+const getUserRoles = async (url, token) => {
+  const response = await axios.get(`${url}/user_roles`, {
     headers: { Authorization: `Bearer ${token}` }
   })
 

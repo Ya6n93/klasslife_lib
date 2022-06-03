@@ -1,7 +1,7 @@
 import axios from '../../lib/axios'
 
-async function createSchoolSubject(token, data) {
-  const response = await axios.post('/school_subjects', data, {
+const createSchoolSubject = async (url, token, data) => {
+  const response = await axios.post(`${url}/school_subjects`, data, {
     headers: { Authorization: `Bearer ${token}` }
   })
 

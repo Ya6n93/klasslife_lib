@@ -1,7 +1,7 @@
 import axios from '../../lib/axios'
 
-async function deleteUser(token) {
-  const response = await axios.delete('/users', {
+const deleteUser = async (url, token) => {
+  const response = await axios.delete(`${url}/users`, {
     headers: { Authorization: `Bearer ${token}` }
   })
 

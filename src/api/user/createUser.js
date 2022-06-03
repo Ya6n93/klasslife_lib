@@ -1,8 +1,8 @@
 import axios from '../../lib/axios'
 
-async function createUser(token, email, password) {
+const createUser = async (url, token, email, password) => {
   const response = await axios.post(
-    '/users',
+    `${url}/users`,
     {
       email,
       password

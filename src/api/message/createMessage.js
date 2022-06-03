@@ -1,7 +1,7 @@
 import axios from '../../lib/axios'
 
-async function createMessage(token, data) {
-  const response = await axios.post('/messages', data, {
+const createMessage = async (url, token, data) => {
+  const response = await axios.post(`${url}/messages`, data, {
     headers: { Authorization: `Bearer ${token}` }
   })
 
