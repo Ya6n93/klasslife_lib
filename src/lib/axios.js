@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const iaxios = axios.create({
-  baseURL: '',
-  withCredentials: true
+  baseURL: ''
+  // withCredentials: true
 })
 
 iaxios.interceptors.request.use((config) => {
