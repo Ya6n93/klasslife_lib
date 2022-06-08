@@ -7,3 +7,5 @@ const getConversations = async (url, token) => {
 
   return response
 }
+
+export { getConversations }
