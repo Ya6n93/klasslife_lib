@@ -4,6 +4,4 @@ const setAccessToken = (token) => {
 
 const getAccessToken = () => localStorage.getItem('access_token')
 
-//Un refreshToken ?
-
 export { setAccessToken, getAccessToken }
