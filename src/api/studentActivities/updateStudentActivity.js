@@ -1,12 +1,9 @@
 import axios from '../../lib/axios'
 
-const updateStudentActivity = async (url, token, studentActivityId, data) => {
-  const response = await axios.patch(
+const updateStudentActivity = async (url, studentActivityId, data) => {
+  const response = await axios.put(
     `${url}/student_activities/${studentActivityId}`,
-    data,
-    {
-      headers: { Authorization: `Bearer ${token}` }
-    }
+    data
   )
 
   return response
