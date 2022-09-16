@@ -1,9 +1,7 @@
 import axios from '../../lib/axios'
 
-const createStudentActivity = async (url, token, data) => {
-  const response = await axios.post(`${url}/student_activities`, data, {
-    headers: { Authorization: `Bearer ${token}` }
-  })
+const createStudentActivity = async (url, data) => {
+  const response = await axios.post(`${url}/student_activities`, data)
 
   return response
 }
