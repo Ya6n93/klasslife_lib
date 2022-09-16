@@ -1,9 +1,13 @@
 import axios from '../../lib/axios'
 
-const createConversation = async (url, token, data) => {
-  const response = await axios.post(`${url}/conversations`, data, {
-    headers: { Authorization: `Bearer ${token}` }
-  })
+const createConversation = async (url, token, userId) => {
+  const response = await axios.post(
+    `${url}/conversations?otherUser=${userId}`,
+    {},
+    {
+      headers: { Authorization: `Bearer ${token}` }
+    }
+  )
 
   return response
 }
