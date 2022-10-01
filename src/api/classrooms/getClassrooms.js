@@ -1,16 +1,7 @@
 import axios from '../../lib/axios'
 
-const getClassrooms = async (url, token, params) => {
-  let paramsString = ''
-  if (params) {
-    paramsString = `?${Object.keys(params)
-      .map((key) => `${key}=${params[key]}`)
-      .join('&')}`
-  }
-
-  const response = await axios.get(`${url}/classrooms${paramsString}`, {
-    headers: { Authorization: `Bearer ${token}` }
-  })
+const getClassrooms = async (url) => {
+  const response = await axios.get(`${url}/classrooms`)
 
   return response
 }
